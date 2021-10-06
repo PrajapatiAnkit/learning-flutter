@@ -1,5 +1,5 @@
 class CatalogModal {
-  static var items;
+  static var items = null;
 }
 
 class Item {

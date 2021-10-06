@@ -5,30 +5,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:learning/screens/home_page.dart';
 import 'package:learning/screens/login_page.dart';
 import 'package:learning/utils/routes.dart';
+import 'package:learning/widgets/themes.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Home',
-      // theme: ThemeData(
-      //   primarySwatch: Colors.deepPurple,
-      //   fontFamily: GoogleFonts.lato().fontFamily,
-      //   appBarTheme: AppBarTheme(
-      //     color: Colors.white,
-      //     elevation: 0.0,
-      //     iconTheme: IconThemeData(color: Colors.black),
-      //   ),
-      // ),
+      themeMode: ThemeMode.light,
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
+      debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => LoginPage(),
-        MyRoutes.loginRoute: (context) => LoginPage(),
-        MyRoutes.homeRoute: (context) => HomePage()
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage()
       },
     );
   }
