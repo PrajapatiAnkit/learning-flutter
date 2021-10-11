@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learning/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: context.canvasColor,
       child: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -75,23 +76,27 @@ class _LoginPageState extends State<LoginPage> {
                       },
                     ),
                     SizedBox(height: 40),
-                    InkWell(
-                      onTap: () => submitLogin(context),
-                      child: Container(
-                        width: 150,
-                        height: 50,
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Login',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                    Material(
+                      color: context.theme.buttonColor,
+                      borderRadius: BorderRadius.circular(50),
+                      child: InkWell(
+                        onTap: () => submitLogin(context),
+                        child: Container(
+                          width: 150,
+                          height: 50,
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
+                          decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(8)),
                         ),
-                        decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(8)),
                       ),
                     ),
                   ],

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:learning/screens/cart_page.dart';
 
 import 'package:learning/screens/home_page.dart';
